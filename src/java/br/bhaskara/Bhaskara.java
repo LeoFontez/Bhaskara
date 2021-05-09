@@ -4,70 +4,72 @@ import java.util.Scanner;
 
 public class Bhaskara {
 
-    private float a;
-    private float b;
-    private float c;
-    private float delta;
-    private float x;
-    
-    public float getA() {
+    private int a;
+    private int b;
+    private int c;
+    private double delta;
+    private double x1;
+    private double x2;
+ 
+    public int getA() {
         return a;
     }
 
-    public void setA(float a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public float getB() {
+    public int getB() {
         return b;
     }
 
-    public void setB(float b) {
+    public void setB(int b) {
         this.b = b;
     }
 
-    public float getC() {
+    public int getC() {
         return c;
     }
 
-    public void setC(float c) {
+    public void setC(int c) {
         this.c = c;
     }
 
-    public float getDelta() {
+    public double getDelta() {
         return delta;
     }
 
-    public void setDelta(float delta) {
+    public void setDelta(double delta) {
         this.delta = delta;
     }
 
-    public float getX() {
-        return x;
+    public double getX1() {
+        return x1;
     }
 
-    public void setX(float x) {
-        this.x = x;
+    public void setX1(double x1) {
+        this.x1 = x1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public void setX2(double x2) {
+        this.x2 = x2;
     }
 
     public double calcularDelta(){
-        
         delta = (b*b) - 4 * a * c;
-        valorX();
+        if(delta >= 0){
+            calcularRaizes();
+            
+        }
         return delta;
     }
-   
-    public float valorX(){
-        float x1,x2;
-        
-        x1 = (float) (-b + Math.sqrt(delta) / (2 * a));
-        x2 = (float) (-b - Math.sqrt(delta) / (2 * a));
-        
-                return x;
+    
+    public void calcularRaizes(){
+        x1 = ((-1 * b) + Math.sqrt(delta)) / (2 * a);
+        x2 = ((-1 * b) - Math.sqrt(delta)) / (2 * a); 
     }
-
-   /* public double x2(){
-        x =((-b - Math.sqrt(delta))/ (2 * a));
-        return x;
-    }*/
 }
